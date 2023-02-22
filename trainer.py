@@ -9,10 +9,9 @@ import discord
 from discord.ext import commands
 
 # open the pattern.json file
-with open('pattern.json', 'r') as f:
+with open('patterns.json', 'r') as f:
     pattern = json.load(f)
 
-# run the main bot
 bot = commands.Bot(command_prefix='!', self_bot=True)
 
 logo = f"""{Fore.CYAN}   _______   ________  ___  _______      
@@ -44,8 +43,8 @@ async def on_message(message):
         return
     message = message.content
     pattern["speechPatterns"].append(message)
-    print(f"{Fore.WHITE}[ {Fore.GREEN}+ {Fore.WHITE}] {Fore.LIGHTBLACK_EX}Added {Fore.WHITE}{message} {Fore.LIGHTBLACK_EX}to the pattern.json file", end="\r")
-    with open('pattern.json', 'w') as f:
+    print(f"{Fore.WHITE}[ {Fore.GREEN}+ {Fore.WHITE}] {Fore.LIGHTBLACK_EX}Added {Fore.WHITE}{message} {Fore.LIGHTBLACK_EX}to the patterns.json file", end="\r")
+    with open('patterns.json', 'w') as f:
         json.dump(pattern, f, indent=4)
 
 bot.run(token, bot=False)
