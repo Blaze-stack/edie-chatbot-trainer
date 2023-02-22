@@ -19,7 +19,7 @@ logo = f"""{Fore.CYAN}   _______   ________  ___  _______
   \ \   __/|\ \  \_|\ \ \  \ \   __/|    
    \ \  \_|/_\ \  \ \\\ \ \  \ \  \_|/__  
     \ \  \_|\ \ \  \_\\\ \ \  \ \  \_|\ \ 
-     \ \_______\ \_______\ \__\ \_______\
+     \ \_______\ \_______\ \__\ \_______\ 
       \|_______|\|_______|\|__|\|_______| Trainer By Blaze_dev"""
 print(logo)
 print("")
@@ -43,7 +43,7 @@ async def on_message(message):
         return
     message = message.content
     pattern["speechPatterns"].append(message)
-    print(f"{Fore.WHITE}[ {Fore.GREEN}+ {Fore.WHITE}] {Fore.LIGHTBLACK_EX}Added {Fore.WHITE}{message} {Fore.LIGHTBLACK_EX}to the patterns.json file", end="\r")
+    print(f"{Fore.WHITE}[ {Fore.GREEN}+ {Fore.WHITE}] {Fore.LIGHTBLACK_EX}Added {Fore.WHITE}{message} {Fore.LIGHTBLACK_EX}to the patterns.json file")
     with open('patterns.json', 'w') as f:
         json.dump(pattern, f, indent=4)
 
