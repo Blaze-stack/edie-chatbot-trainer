@@ -11,7 +11,7 @@ from discord.ext import commands
 # open the pattern.json file
 with open('patterns.json', 'r') as f:
     pattern = json.load(f)
-
+    
 bot = commands.Bot(command_prefix='!', self_bot=True)
 
 logo = f"""{Fore.CYAN}   _______   ________  ___  _______      
@@ -37,9 +37,7 @@ async def on_ready():
 
 @bot.event
 async def on_message(message):
-    if message.author == bot.user:
-        return
-    if message.content == "":
+    if message.author == bot.user or message.author.bot or message.content == "":
         return
     message = message.content
     pattern["speechPatterns"].append(message)
