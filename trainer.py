@@ -47,4 +47,4 @@ async def on_message(message):
     with open('patterns.json', 'w') as f:
         json.dump(pattern, f, indent=4)
 
-bot.run(token, bot=False)
+bot.run(token)
